@@ -1,0 +1,43 @@
+#Rectangle Art Generator
+
+1) Unique Rectangles:
+  -positions
+  -colors
+  -sizes
+  -click count
+  -fill %
+  -uniqueness at the making
+  -uniqueness at the moment
+  -date
+  -artist
+  -#order in the world
+
+2) Earn Rectangle Coins for your Unique art.
+  -depending how unique it is at the time of making
+  compared to all Rectangles between all users,
+  you earn coins.
+  -kind of mining art
+
+
+2) SHOP where you can upgrade your "Art kit"
+  -new colors (limited quantity)
+  -rotatable rectangles (limited quantity)
+  -click speed (upgrade with optional speed)
+  -larger rectangles (upgrade and optional)
+  -color packs
+  -shapes (super limited)
+
+3) Save your art in your "Art Gallery"
+  -Unique code/ID for the art (integrity)
+
+4) Buy/Sell/Trade your art between all users using your
+Rectangle Coins.
+
+5) Get physical copy of your art with it's unique ID 
+and secret parameters only visible to you.
+  -as a NFT Card (collectable)
+  -as a t-shirt
+  -as a sock
+  -as a painting
+  -etc
+

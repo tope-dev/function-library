@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let add7 = (n) => {
+        n = n + 7;
+        console.log(n);
+        return n;
+      };
+
+      let add5 = (n) => n + 5;
+      let add12 = (n) => {
+        n = add7(n); // n + 7
+        n = add5(n); // (n + 7) + 5
+        return n;
+      };
+
+      let multiply = (a, b) => {
+        n = a * b;
+        console.log(`${a} * ${b} = ${n}`);
+        return n;
+      };
+
+      let capitalize = (string) => {
+        newString = string[0].toUpperCase() + string.toLowerCase(1);
+        console.log(newString);
+        return newString;
+      };
+
+      let lastLetter = (string) => {
+        newString = string.slice(-1);
+        console.log(newString);
+        return newString;
+      };
+
+      lastLetter("abcd or G");
+      capitalize("boOBB poW");
+      add7(5);
+      multiply(2, 5);
+    </script>
+  </body>
+</html>

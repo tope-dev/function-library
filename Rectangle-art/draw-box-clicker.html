@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Functions: Task 2</title>
+    <title>Rectangle Art</title>
     <style>
       body {
         padding: 40px 20px;
@@ -25,6 +25,10 @@
         border-radius: 25px;
         transition-duration: 0.05s;
         box-shadow: 0 9px #999;
+      }
+
+      button.clearCanvas {
+        background-color: orangered;
       }
 
       button:hover {
@@ -89,22 +93,24 @@
     <button class="drawRectangle">Draw Rectangle</button>
     <canvas width="480" height="320"> </canvas>
     <h1>Draw your <span>rectnagle</span> art</h1>
+    <button class="clearCanvas">Clear Canvas</button>
     <p class="count">Click Count: 0</p>
   </body>
   <script>
+    //querySelectors
     const count = document.querySelector("p.count");
     const canvas = document.querySelector("canvas");
     const ctx = canvas.getContext("2d");
     const drawButton = document.querySelector("button.drawRectangle");
+    const clearButton = document.querySelector("button.clearCanvas");
 
+    //VARIABLES
     let color = ["red", "green", "blue"];
     let clicks = 0;
-
     let WIDTH = document.documentElement.clientWidth;
     let HEIGHT = document.documentElement.clientHeight;
 
-    //FUNCTIONS
-
+    //MATH FUNCTIONS
     function random(number) {
       return Math.floor(Math.random() * number);
     }
@@ -112,9 +118,8 @@
     function randomMinMax(min, max) {
       return Math.random() * (max - min) + min;
     }
-
+    //Draw a random rectangle
     function draw() {
-      // ctx.clearRect(0, 0, WIDTH, HEIGHT);
       let xRandom = randomMinMax(-120, 479);
       let yRandom = randomMinMax(-104, 319);
       let widthRandom = random(360);
@@ -127,12 +132,17 @@
       console.log(`x:(${xRandom})\ny:(${yRandom})`);
       console.log(`Total Clicks: ${clicks}`);
     }
-
+    //Clear Canva and null the counter
+    clearButton.addEventListener("click", () => {
+      clicks = 0;
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);
+      count.textContent = `Click Count: ${clicks}`;
+    });
+    //Add Rectangle and add +1 to Counter
     drawButton.addEventListener("click", () => {
       clicks++;
       draw();
       count.textContent = `Click Count: ${clicks}`;
     });
-    // const section = document.querySelector("section");
   </script>
 </html>
