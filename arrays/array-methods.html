@@ -17,7 +17,7 @@
   <script>
     // toString()
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.querySelector(".demo").innerHTML = fruits.toString();   // turns array elements to string
+    document.querySelector(".demo").innerHTML = fruits.toString();   // turns array elements to a comma separated string when a primitive value is expected
     console.log(fruits.toString());
     // pop()
     document.querySelector(".demo2").innerHTML = fruits.join(" * "); // joins all array elements with assigned separator and turns into string
@@ -77,6 +77,25 @@
     // the first parameter (1) defines the position where new elements should be added
     // the second parameter (3) defines how many elements should be removed
     // the rest of the parameters are omitted. No new elements will be added
+    console.log(newFood);
+
+    // slice()                                                       // slice() method slices out a piece of an array into a new array
+
+    const updatedFood = newFood.slice(2);                            // this example slices out a part of an array starting from array element 2 ("Grapes")
+    console.log(updatedFood);                                        // new Array 'updatedFood'
+    // slice() method creates a new array
+    // slice() method does not remove any elements from the source array.
+    console.log(newFood);                                            // old Array 'newFood'
+
+    const shoppingCart = newFood.slice(2,5);                         // method can take two arguments. This method selects elements from the start argument, and up to (but not including) the end argument
+    console.log(shoppingCart);
+
+
+
+    
+
+
+
 
 
 
