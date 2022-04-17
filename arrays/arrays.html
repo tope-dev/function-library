@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+  </head>
+  <body>
+    <h1>Javascript Arrays</h1>
+    <h4 id="demo">Hello</h4>
+    <h4 id="demo2">Hello</h4>
+    <h4 class="my-cars"></h4>
+
+    <h1>Juices</h1>
+    <p id="juiceText"></p>
+
+    <script>
+      // part 1
+      const cars = ["Saab", "Volvo", "Bmw"];
+      const myCars = {firstCar: "Kalos", secondCar: "Merivia", thirdCar: "Golf V"}
+      document.querySelector("#demo").innerHTML = cars;
+      cars[0] = "Audi";
+      document.querySelector("#demo2").innerHTML = cars;
+      document.querySelector(".my-cars").innerHTML = `${myCars.firstCar} is my first Car`;
+
+      // part 2 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      let fruitsLength = fruits.length;
+      console.log(fruitsLength);
+      let firstFruit = fruits[0];
+      console.log(`First fruit: ${firstFruit}`);
+
+      // part 3
+
+      const juices = ["Pineapple", "Apple", "Orange", "Mango"];
+
+      let juiceText = "<ul>";
+      juices.forEach(myFunction);
+      juiceText += "</ul>";
+
+      function myFunction(value) {
+        juiceText += "<li>" + value + "</li>";
+      }
+
+      document.querySelector("#juiceText").innerHTML = juiceText;
+
+      // part 4
+
+      const motors = ["Xnova", "T-motor", "Xing"];
+      motors.push("IFlight");
+      console.log(motors);
+
+      console.log(typeof motors);
+      console.log(`motors is array: ${Array.isArray(motors)}`);
+      console.log(`object is created by given constructor ${motors instanceof Array}`);
+
+
+      // part 5
+
+
+
+
+
+
+      
+      
+    </script>
+  </body>
+</html>

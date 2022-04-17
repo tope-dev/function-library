@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Methods</title>
+</head>
+<body>
+  <h4 class="demo"></h4>
+  <h4 class="demo2"></h4>
+  <h4 class="demo3"></h4>
+  <h4 class="food"></h4>
+
+
+
+  <script>
+    // toString()
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.querySelector(".demo").innerHTML = fruits.toString();   // turns array elements to string
+    console.log(fruits.toString());
+    // pop()
+    document.querySelector(".demo2").innerHTML = fruits.join(" * "); // joins all array elements with assigned separator and turns into string
+    fruits.pop();                                                    // this method removes array element at the end
+    document.querySelector(".demo3").innerHTML = fruits.join(" * ");
+    console.log(fruits.pop());                                       // returns the value that was "popped out"
+    // push()
+    fruits.push("Kiwi");                                             // this method adds new element to an array at the end
+    console.log(fruits.push());                                      // method returns the new array length
+    let length = fruits.push("Grapes");                              // adds "Grapes" element to fruits array and stores the array length in 'length'
+    console.log(length);  
+
+    // shift()
+    fruits.shift();                                                  // method removes the (first) array element and "shifts" all other elements to a lower index
+    console.log(fruits);
+    console.log(fruits.shift());                                     // removes the first array element and returns the value that was shifted out.
+
+    // unshift()
+    fruits.unshift("Lemon");                                         // method adds a new element to an array (at the beginning) and unshifts older elements
+    console.log(fruits.unshift("Strawberries"));                     // adds "Strawberries" element at the start of array and returns the new array length
+
+    // changing elements
+    console.log(fruits);
+    fruits[0] = "Watermelon";                                        // changes array's first element to "Watermelon" (index 0)
+    console.log(fruits);
+    fruits[fruits.length] = "Tomato";                                // another way of push() method how to add new element at the end of array (long way)
+    console.log(fruits);
+
+    // delete (leaves empty holes)
+    delete fruits[1];                                                // deletes an specific index element, but leaves undefined hole in array (use pop() or shift() isntead)
+    console.log(fruits);
+    fruits[1] = "Grapefruit";                                        // adds "Grapefruit" at the index 1 which was an empty array index.
+    console.log(fruits);
+
+    // concat()
+    const berries = ["Blackberry", "Strawberry"];                     
+    const vegetables = ["Potato", "Cucumber"];
+    const food = fruits.concat(berries, vegetables);                 // method does not change the existing arrays. It always returns a new array.
+    console.log(food);
+    document.querySelector(".food").innerHTML = food;
+
+    const newFood = food.concat("Pineapple");                        // method can also take strings as arguments to combine
+    console.log(newFood);
+
+    // splice()                                                      // method can be used to add new items to an array\
+    newFood.splice(2, 0, "Bacon", "Eggs");                           
+    // the first parameter (2) defines the position where new elements should be added (spliced in)
+    // the second parameters (0) defines how many elements should be removed
+    // the rest of the parameters ("Bacon", "Eggs") define the new elements to be added.
+    // splice() method returns an array with deleted items
+    console.log(newFood);
+
+    newFood.splice(2, 2, "Hotdog", "Burger");                        // removes index 2 and 3 elements and replaces them with "Hotdog" and "Burger"
+    console.log(newFood);
+
+    newFood.splice(1, 3);                                            // you can use splice() to remove elements without leaving "holes in the array"
+    // the first parameter (1) defines the position where new elements should be added
+    // the second parameter (3) defines how many elements should be removed
+    // the rest of the parameters are omitted. No new elements will be added
+
+
+
+
+
+
+  </script>
+</body>
+</html>
