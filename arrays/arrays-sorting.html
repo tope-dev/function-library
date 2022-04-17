@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array sorting</title>
+  </head>
+  <body>
+    <script>
+
+      // sort()                                                   // method sorts an array alphabetically
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.sort();
+      console.log(fruits);
+
+      // reverse()                                                // method reverses the elements in an array
+      fruits.sort();
+      fruits.reverse();                                           // you can use it to sort an array in descending order
+      console.log(fruits);
+
+      // Numeric sort()                                           // by default sort() functions sorts values as strings
+      const points = [40, 100, 1, 5, 25, 10];                     // however, if numbers are sorted as strings "25" is bigger than "100". because "2" is bigger than "1"
+      console.log(points);
+      points.sort(function(a,b){return a - b});                   // you can fix this by providing a compare function
+      // or
+      points.sort((a,b) => {return a - b});
+      console.log(points);
+
+      points.sort((a,b) => {return b - a});                       // use the same trick to sort an array descending
+      console.log(points);
+
+      
+    </script>
+  </body>
+</html>
