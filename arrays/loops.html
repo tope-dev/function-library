@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops</title>
+  </head>
+  <body>
+    <!-- <label for="search">Search by contact name: </label>
+    <input id="search" type="text" />
+    <button>Search</button>
+
+    <p></p> -->
+
+    <label for="number">Enter number: </label>
+    <input id="number" type="text" />
+    <button>Generate integer squares</button>
+
+    <p>Output:</p>
+
+    <script>
+      // (for...of)
+      const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+      for (const cat of cats) {
+        // the basic for looping through a collection is the '(for...of)' loop
+        console.log(cat);
+      }
+      // 1. given the collection cats, get the first item in collection
+      // 2. assign it to the variable cat and then run the code between the curly brackets {}
+      // 3. get the next item, and repeat (2) until you've reached the end of the collection
+
+      // map()
+      function toUpper(string) {
+        return string.toUpperCase();
+      }
+
+      const upperCats = cats.map(toUpper); // you can use map() to do something to each item in a collection and create a new collection containing the changed items
+      console.log(upperCats); // ["Leopard", "SERVAL", "JAGUAR", "TIGER", "CARACAL", "LION"]
+
+      // filter()
+      function lCat(cat) {
+        // you can use filter() to test each item in a collection, and create a new collection containing only items that much:
+        return cat.startsWith("L");
+      }
+
+      const filtered = cats.filter(lCat); // this looks a lot like map(), except the function we pass in returns a bollean: if it returns true, then the item is included in the new array. Our function tests that the items starts with the letter "L", so the result is an array containing only cats whose names start with "L": ["Leopard", "Lion"]
+
+      console.log(filtered);
+
+      /* ------------ Looping through collections with a for loop -------------- */
+
+      /* 
+      You can use a 'for' loop to iterate through a collection, instead of a ' for...of' loop.
+
+      Let's look again at our for...of example above:
+    */
+
+      const dogs = ["Rex", "Boogie", "Wolf", "Labrador", "Caracal", "Taxi"];
+
+      for (const dog of dogs) {
+        console.log(dog);
+      }
+
+      // We could rewrite that code like this:
+
+      for (let i = 0; i < dogs.length; i++) {
+        console.log(dogs[i]);
+      }
+
+      // It's usually best to use for...of if you can, but sometimes you still need to use classic 'for' loop
+
+      /* EXITING LOOPS WITH BREAK */
+
+      // If you want to exit a loop before all the iterations have been completed, you can use the break statement.
+
+      // const contacts = [
+      //   "Chris:2232322",
+      //   "Sarah:3453456",
+      //   "Bill:7654322",
+      //   "Mary:9998769",
+      //   "Dianne:9384975",
+      // ];
+      // const para = document.querySelector("p");
+      // const input = document.querySelector("input");
+      // const btn = document.querySelector("button");
+
+      // btn.addEventListener("click", () => {
+      //   const searchName = input.value.toLowerCase();
+      //   input.value = "";
+      //   input.focus();
+      //   para.textContent = "";
+      //   for (const contact of contacts) {
+      //     const splitContact = contact.split(":");
+      //     if (splitContact[0].toLowerCase() === searchName) {
+      //       para.textContent =
+      //         splitContact[0] + "'s number is " + splitContact[1] + ".";
+      //       break;
+      //     }
+      //   }
+      //   if (para.textContent === "") {
+      //     para.textContent = "Contact not found.";
+      //   }
+      // });
+
+      /* SKIPPING ITERATION WITH CONTINUE */
+
+      // The 'continue' statement works in a similar manner to break, but instead of breaking out of the loop entirely, it skips to the next iteration of the loop. Let's look at another example that takes a number as an input.
+
+      const para = document.querySelector("p");
+      const input = document.querySelector("input");
+      const btn = document.querySelector("button");
+
+      btn.addEventListener("click", () => {
+        para.textContent = "Output: ";
+        const num = input.value;
+        input.value = "";
+        input.focus();
+        for (let i = 1; i <= num; i++) {
+          let sqRoot = Math.sqrt(i);
+          if (Math.floor(sqRoot) !== sqRoot) {
+            continue;
+          }
+          para.textContent += `${i} `;
+        }
+      });
+
+
+      
+    </script>
+  </body>
+</html>
